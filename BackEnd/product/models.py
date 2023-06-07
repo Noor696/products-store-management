@@ -14,11 +14,12 @@ class Product(models.Model):
     price=models.FloatField()
     quantity=models.IntegerField(validators=[MinValueValidator(1)])
     category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='products')
+    last_updated= models.DateTimeField(auto_now=True)
 
 # python -m pip install Pillow  -> run this command to accept the image
 
     def __str__(self):
-        return self.name
+        return self.name + ' from '+ str(self.category) + ' Category.'
 
     class Meta:
         ordering = ["-pk"]

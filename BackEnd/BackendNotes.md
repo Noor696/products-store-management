@@ -55,3 +55,5 @@ python manage.py createsuperuser
 **How to Run Django Development Server:**
 
 `python manage.py runserver`
+
+**registering the modal in the admin.py**
