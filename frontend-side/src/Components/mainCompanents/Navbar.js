@@ -5,7 +5,7 @@ const Navbar =() => {
         <div class="container m-auto px-2 md:px-12 lg:px-7">
             <div class="flex flex-wrap items-center justify-between py-3 gap-6 md:py-4 md:gap-0">
                 <div class="w-full px-6 flex justify-between lg:w-max md:px-0">
-                    <a href="https://tailus.io/blocks/hero-section" aria-label="logo" class="flex space-x-2 items-center">
+                    <a href="/" aria-label="logo" class="flex space-x-2 items-center">
                         {/* <Image src="https://tailus.io/sources/blocks/food-delivery/preview/images/icon.png" class="w-12" alt="tailus logo" width="144" height="133"> */}
                         <span class="text-2xl font-bold text-yellow-900">Store <span class="text-yellow-700">Manegment</span></span>
                     </a>
