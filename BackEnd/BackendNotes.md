@@ -57,3 +57,10 @@ python manage.py createsuperuser
 `python manage.py runserver`
 
 **registering the modal in the admin.py**
+
+**JWT** :
+allow us to change our authentication system in django 
+
+**Access Token** : stores all the information about a user / short life (5-15 minutes).
+
+**Refresh Token** : has a longer life span is meant to simply get a new access token/ change depending on how secure you want application
