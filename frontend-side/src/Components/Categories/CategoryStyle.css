@@ -1,0 +1,22 @@
+.page{
+    margin-left: 100px;
+}
+#table{
+    margin-top: 20px;
+}
+
+#tr{
+    text-align: center;
+}
+
+#trv{
+    text-align: center;
+}
+#btn{
+    align-content:space-between;
+}
+#editbut{
+    margin-right: 10px;
+}
+
+
