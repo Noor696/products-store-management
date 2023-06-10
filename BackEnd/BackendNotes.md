@@ -64,3 +64,20 @@ allow us to change our authentication system in django
 **Access Token** : stores all the information about a user / short life (5-15 minutes).
 
 **Refresh Token** : has a longer life span is meant to simply get a new access token/ change depending on how secure you want application
+
+**I used json-web-token-authentication**
+`https://www.django-rest-framework.org/api-guide/authentication/#json-web-token-authentication`
+
+and then go to `https://github.com/jazzband/djangorestframework-simplejwt` 
+simplejwt is a package that allows us to work with jwt and this is the documentaion for it `https://django-rest-framework-simplejwt.readthedocs.io/en/latest/`
+
+* we need the access token in the frontend in order to store inside of local storage and inside of state in the frontend to make sure that a user is authenticated.
+
+* in this app I used :
+    `"ACCESS_TOKEN_LIFETIME": timedelta(minutes=5), `
+    - we can increase the access time but 5 min is good.
+    `"REFRESH_TOKEN_LIFETIME": timedelta(days=90),` 
+    - to make user still logged in.
+
+* after this we should run `python manage.py migrate` to add refresh database teble
+
