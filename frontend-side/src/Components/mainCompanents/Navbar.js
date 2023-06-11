@@ -1,4 +1,9 @@
+import React, {useContext} from "react";
+import AuthContext from "../../context/AuthContext";
+
 const Navbar =() => {
+    // let {name} = useContext(AuthContext);
+
     return (
         <div class="w-full">
     <nav class="fixed top-0 z-10 w-full bg-white md:absolute md:bg-transparent">
@@ -49,10 +54,13 @@ const Navbar =() => {
                             </span>
                         </button>
                         <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
+                            <a href="/login">
                             <span class="block text-yellow-900 font-semibold text-sm">
                                 Login
                             </span>
+                            </a>
                         </button>
+                        {/* <span>Hello {name}</span> */}
                     </div>
                 </div>
             </div>
