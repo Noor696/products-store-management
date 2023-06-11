@@ -100,7 +100,7 @@ const Products = () => {
             
                 
                         <h1>Products</h1>
-                        <Button onClick={openModal} variant="success">Add Product</Button>
+                        <Button id="addBtn" onClick={openModal} variant="success">Add Product</Button>
                         {/* <button onClick={openModal}>Add Product</button> */}
                         <ProductFormModal
         isOpen={isModalOpen}

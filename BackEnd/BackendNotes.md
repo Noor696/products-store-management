@@ -81,3 +81,8 @@ simplejwt is a package that allows us to work with jwt and this is the documenta
 
 * after this we should run `python manage.py migrate` to add refresh database teble
 
+* work on cors configuration (cross origin resource sharing)
+react works from 3000 port
+django works from 8000 port
+
+* I use tis packege `https://github.com/adamchainz/django-cors-headers/tree/main` to solve cors issue

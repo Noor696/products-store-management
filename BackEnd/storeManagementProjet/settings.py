@@ -189,8 +189,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         'rest_framework.permissions.IsAuthenticated'
 #     ]
 # }
-# CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_ALL_ORIGIN = True
 # OR
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',  # Replace with the URL of your React frontend
-]
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:3000',  # Replace with the URL of your React frontend
+# ]
