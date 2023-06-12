@@ -46,6 +46,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # Other middleware
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,9 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # Other middleware
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    
 ]
 
 # from simplejwt backege documentation
@@ -190,8 +192,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     ]
 # }
 
-CORS_ALLOW_ALL_ORIGIN = True
-# OR
-# CORS_ORIGIN_WHITELIST = [
-#     'http://localhost:3000',  # Replace with the URL of your React frontend
-# ]
+# CORS_ALLOW_ALL_ORIGIN = True
+# OR for more security
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]

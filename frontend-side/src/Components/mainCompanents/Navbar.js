@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import AuthContext from "../../context/AuthContext";
 
 const Navbar =() => {
-    // let {name} = useContext(AuthContext);
+    let {user} = useContext(AuthContext);
 
     return (
         <div class="w-full">
@@ -53,6 +53,16 @@ const Navbar =() => {
                                 Sign up
                             </span>
                         </button>
+
+                        {user ? (
+
+                        <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
+                            <a href="/login">
+                            <span class="block text-yellow-900 font-semibold text-sm">
+                                Logout
+                            </span>
+                            </a>
+                        </button>):(
                         <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
                             <a href="/login">
                             <span class="block text-yellow-900 font-semibold text-sm">
@@ -60,7 +70,10 @@ const Navbar =() => {
                             </span>
                             </a>
                         </button>
-                        {/* <span>Hello {name}</span> */}
+                        )}
+
+                        {user && <span>Hello {user.username}</span>}
+                        
                     </div>
                 </div>
             </div>
