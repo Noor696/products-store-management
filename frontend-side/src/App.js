@@ -32,13 +32,13 @@ function App() {
       <Route path="/" element={<Home />} exact/>
                             {/* </Route> */}
                             
-                            <Route path="/products" element={<Products />}>
-                            </Route>
-                            <Route path="/categories" element={<Categories />}>
-                            </Route>
+          <Route path="/products" element={<Products />}>
+          </Route>
+          <Route path="/categories" element={<Categories />}>
+          </Route>
 
       </Routes>
-      
+
       </AuthProvider>
       </Router>
       </Row>
