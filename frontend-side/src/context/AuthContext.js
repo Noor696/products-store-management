@@ -9,11 +9,12 @@ export default AuthContext;
 export const AuthProvider = ({children}) => {
 
     //using Local storage to make user stilled login when refresh the page.
-    // localStorage.getItem('authTokens')
-    let [authTokens, setAuthTokens] = useState(null)
-    let [user, setUser] = useState(null)
+    // localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null
+    let [authTokens, setAuthTokens] = useState(()=> localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null)
+    let [user, setUser] = useState(()=> localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')) : null)
 
     const navigate  = useNavigate()
+
     let loginUser = async (e )=> {
         e.preventDefault() //to prevent refresh the bege
         // console.log('form Submitted')
@@ -35,6 +36,13 @@ export const AuthProvider = ({children}) => {
         }else{
             alert('somthing went wrong!')
         }
+    }
+// logout functionality : add the function that changes state, removes that local storage and redirects a user 
+    let logoutUser = () => {
+        setAuthTokens(null)
+        setUser(null)
+        localStorage.removeItem('authTokens')
+        navigate('/login')
 
     }
 
@@ -45,7 +53,7 @@ export const AuthProvider = ({children}) => {
         user:user,
         // authTokens:authTokens,
         loginUser:loginUser,
-        // logoutUser:logoutUser,
+        logoutUser:logoutUser,
     }
 
     return(
