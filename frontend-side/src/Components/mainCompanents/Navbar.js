@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import AuthContext from "../../context/AuthContext";
 
 const Navbar =() => {
-    let {user} = useContext(AuthContext);
+    let {user, logoutUser} = useContext(AuthContext);
 
     return (
         <div class="w-full">
@@ -56,7 +56,7 @@ const Navbar =() => {
 
                         {user ? (
 
-                        <button type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
+                        <button onClick={logoutUser} type="button" title="Start buying" class="w-full py-3 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
                             <a href="/login">
                             <span class="block text-yellow-900 font-semibold text-sm">
                                 Logout
